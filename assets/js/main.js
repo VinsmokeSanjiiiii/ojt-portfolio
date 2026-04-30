@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Lightbox Logic for Gallery
     const galleryImages = document.querySelectorAll('.gallery-img');
     if (galleryImages.length > 0) {
         const lightbox = document.createElement('div');
@@ -67,31 +64,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. NEW: Scroll Reveal Animation Logic
-    // This watches elements on the page and reveals them when you scroll to them!
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // Triggers when 15% of the element is visible
+        threshold: 0.15 
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once revealed
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Target all the main visual blocks on the website to animate
     const animatedElements = document.querySelectorAll('.content-section, .resume-section, .page-header, .company-header, .gallery-img, .resume-item, .info-row');
     
     animatedElements.forEach((el, index) => {
-        // Add the base CSS class for hiding the element initially
         el.classList.add('fade-in-up');
         
-        // Add a tiny staggered delay based on its order so they pop up one after the other
         el.style.transitionDelay = `${index % 4 * 0.1}s`; 
         
         observer.observe(el);

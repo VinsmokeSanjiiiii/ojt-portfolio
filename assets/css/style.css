@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. CSS Variables & Design System (Light/Dark Mode)
-   ========================================================================== */
 :root {
   --bg-primary: #FCFCFC;
   --bg-secondary: #F7F5F2;
@@ -11,11 +8,11 @@
   --accent-hover: #C29E99;
   --border-color: #E8E5E1;
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.1); /* New hover shadow */
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.1);
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
-  --radius-md: 12px; /* Slightly softer corners */
-  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother animations */
+  --radius-md: 12px; 
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 [data-theme="dark"] {
@@ -31,9 +28,6 @@
   --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================================================================
-   2. Resets & Base Styles
-   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--font-body); background-color: var(--bg-primary); color: var(--text-main); line-height: 1.6; transition: background-color 0.4s ease, color 0.4s ease; overflow-x: hidden; }
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; color: var(--text-main); margin-bottom: 1rem; }
@@ -41,26 +35,22 @@ a { text-decoration: none; color: var(--accent-color); transition: var(--transit
 a:hover { color: var(--accent-hover); }
 img { max-width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
 
-/* ==========================================================================
-   3. Navigation Bar (Now with Glassmorphism)
-   ========================================================================== */
 .navbar { 
     position: fixed; top: 0; width: 100%; z-index: 1000; 
     display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; 
-    background-color: rgba(255, 255, 255, 0.85); /* Transparent white */
-    backdrop-filter: blur(12px); /* Glass blur effect */
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     transition: var(--transition); 
 }
 [data-theme="dark"] .navbar {
-    background-color: rgba(42, 42, 46, 0.85); /* Transparent dark */
+    background-color: rgba(42, 42, 46, 0.85); 
 }
 .nav-brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: bold; color: var(--text-main); letter-spacing: 1px; }
 .nav-links { display: flex; list-style: none; gap: 1.5rem; align-items: center; font-size: 0.95rem; }
 .nav-links a { color: var(--text-main); font-weight: 500; position: relative; padding-bottom: 5px; }
 
-/* Animated Underline for Nav Links */
 .nav-links a::after {
     content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0;
     background-color: var(--accent-color); transition: var(--transition);
@@ -72,15 +62,11 @@ img { max-width: 100%; height: auto; display: block; border-radius: var(--radius
 .theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
 .hamburger { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
 
-/* ==========================================================================
-   4. Layouts, Buttons & Hover Effects
-   ========================================================================== */
 main { margin-top: 80px; min-height: calc(100vh - 150px); }
 .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
 .page-header { text-align: center; margin-bottom: 3rem; }
 .page-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
-/* Button Interactions */
 .btn { 
     display: inline-block; background-color: var(--accent-color); color: #fff; 
     padding: 0.75rem 1.5rem; border-radius: 30px; font-weight: 600; border: none; cursor: pointer; 
@@ -90,7 +76,6 @@ main { margin-top: 80px; min-height: calc(100vh - 150px); }
 .btn-outline { background-color: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); box-shadow: none; }
 .btn-outline:hover { background-color: var(--accent-color); color: #fff; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212, 181, 176, 0.4); }
 
-/* Card Interactions */
 .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .content-section, .resume-section { 
     margin-bottom: 2.5rem; background: var(--bg-card); padding: 2.5rem; 
@@ -104,7 +89,6 @@ main { margin-top: 80px; min-height: calc(100vh - 150px); }
 }
 .content-section p { margin-bottom: 1rem; color: var(--text-muted); }
 
-/* Resume & Skills Interactions */
 .resume-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
 .resume-item { margin-bottom: 1.5rem; border-left: 3px solid var(--accent-color); padding-left: 1rem; transition: var(--transition); }
 .resume-item:hover { border-left-width: 6px; background: linear-gradient(90deg, rgba(212,181,176,0.1) 0%, rgba(255,255,255,0) 100%); }
@@ -131,9 +115,6 @@ main { margin-top: 80px; min-height: calc(100vh - 150px); }
 .info-label { font-weight: 600; color: var(--text-main); }
 .info-value { color: var(--text-muted); text-align: right; }
 
-/* ==========================================================================
-   5. Scroll Animation Classes (Controlled by JS)
-   ========================================================================== */
 .fade-in-up {
     opacity: 0;
     transform: translateY(40px);
@@ -144,9 +125,6 @@ main { margin-top: 80px; min-height: calc(100vh - 150px); }
     transform: translateY(0);
 }
 
-/* ==========================================================================
-   6. Gallery & Lightbox
-   ========================================================================== */
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius-md); cursor: pointer; transition: var(--transition); }
 .gallery-img:hover { transform: scale(1.03); box-shadow: var(--shadow-hover); }
