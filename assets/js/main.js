@@ -52,18 +52,48 @@ document.addEventListener('DOMContentLoaded', () => {
             img.addEventListener('click', () => {
                 lightboxImg.src = img.src;
                 lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                document.body.style.overflow = 'hidden'; 
             });
         });
 
         const closeLightbox = () => {
             lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore background scrolling
+            document.body.style.overflow = 'auto'; 
         };
 
         closeBtn.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) closeLightbox(); // Close if clicking outside the image
+            if (e.target === lightbox) closeLightbox(); 
         });
     }
+
+    // 4. NEW: Scroll Reveal Animation Logic
+    // This watches elements on the page and reveals them when you scroll to them!
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Triggers when 15% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stop observing once revealed
+            }
+        });
+    }, observerOptions);
+
+    // Target all the main visual blocks on the website to animate
+    const animatedElements = document.querySelectorAll('.content-section, .resume-section, .page-header, .company-header, .gallery-img, .resume-item, .info-row');
+    
+    animatedElements.forEach((el, index) => {
+        // Add the base CSS class for hiding the element initially
+        el.classList.add('fade-in-up');
+        
+        // Add a tiny staggered delay based on its order so they pop up one after the other
+        el.style.transitionDelay = `${index % 4 * 0.1}s`; 
+        
+        observer.observe(el);
+    });
 });
