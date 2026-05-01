@@ -12,7 +12,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Buliklek</a>
+        <a href="index.html" class="nav-brand">E-Portfolio</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -36,8 +36,19 @@
                 <h1>Work Outputs & Portfolio</h1>
                 <p>A collection of projects, tasks, and system features I contributed to during my On-the-Job Training.</p>
             </div>
+
+            <!-- NEW: Tech Stack Filter Buttons -->
+            <div class="filter-container fade-in-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="vue">Vue.js</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn" data-filter="postgres">PostgreSQL</button>
+            </div>
+
             <div class="content-grid">
-                <div class="content-section" style="padding: 0; overflow: hidden;">
+                
+                <!-- Notice the new output-card class and data-tech attributes! -->
+                <div class="content-section output-card" data-tech="vue postgres" style="padding: 0; overflow: hidden;">
                     <img src="https://via.placeholder.com/600x350/E8E5E1/2C303A?text=Asset+Management+Dashboard" alt="Asset Management System Screenshot" style="width: 100%; border-radius: var(--radius-md) var(--radius-md) 0 0; border-bottom: 1px solid var(--border-color);">
                     <div style="padding: 2rem;">
                         <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Title: Asset Management System Dashboard</h3>
@@ -51,7 +62,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="content-section" style="padding: 0; overflow: hidden;">
+
+                <div class="content-section output-card" data-tech="java" style="padding: 0; overflow: hidden;">
                     <img src="https://via.placeholder.com/600x350/E8E5E1/2C303A?text=Report+Generation+Module" alt="Report Generation Module Screenshot" style="width: 100%; border-radius: var(--radius-md) var(--radius-md) 0 0; border-bottom: 1px solid var(--border-color);">
                     <div style="padding: 2rem;">
                         <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Title: Automated Report Generator</h3>
@@ -64,6 +76,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>

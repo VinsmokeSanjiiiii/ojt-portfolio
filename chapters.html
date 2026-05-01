@@ -12,7 +12,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Buliklek</a>
+        <a href="index.html" class="nav-brand">E-Portfolio</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -34,7 +34,11 @@
         <section class="container">
             <div class="page-header">
                 <h1>Narrative Report</h1>
-                <p>Use the Table of Contents or the Dropdown below to seamlessly browse through the chapters of my On-the-Job Training experience.</p>
+                <p>Use the Table of Contents to seamlessly browse through the chapters of my On-the-Job Training experience.</p>
+                <!-- NEW Export to PDF Button -->
+                <button class="btn btn-outline print-btn" style="margin-top: 1.5rem; padding: 0.6rem 1.2rem; font-size: 0.95rem;">
+                   Export to PDF | Print
+                </button>
             </div>
 
             <div class="chapter-selector-wrapper">
@@ -49,17 +53,20 @@
 
             <div class="resume-grid">
                 <div>
-                    <div class="toc-card">
-                        <h3 style="margin-bottom: 1rem;">Table of Contents</h3>
-                        <ul class="toc-list">
-                            <li class="toc-link active-toc" data-target="chapter1">1. Introduction</li>
-                            <li class="toc-link" data-target="chapter2">2. Company Profile</li>
-                            <li class="toc-link" data-target="chapter3">3. Training Experience</li>
-                            <li class="toc-link" data-target="chapter4">4. Conclusion</li>
-                            <li class="toc-link" data-target="chapter5">5. Recommendations & Appendices</li>
-                        </ul>
+                    <div class="toc-sidebar">
+                        <div class="toc-card">
+                            <h3 style="margin-bottom: 1rem;">Table of Contents</h3>
+                            <ul class="toc-list">
+                                <li class="toc-link active-toc" data-target="chapter1">1. Introduction</li>
+                                <li class="toc-link" data-target="chapter2">2. Company Profile</li>
+                                <li class="toc-link" data-target="chapter3">3. Training Experience</li>
+                                <li class="toc-link" data-target="chapter4">4. Conclusion</li>
+                                <li class="toc-link" data-target="chapter5">5. Recommendations</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
                 <div>
                     <div id="chapter1" class="content-section chapter-content active">
                         <h2 style="color: var(--accent-color);">Chapter 1: Introduction</h2>
@@ -68,6 +75,7 @@
                         <p><strong>1.2 Objectives of the OJT</strong></p>
                         <p>To apply software development theories, enhance problem-solving skills in a corporate environment, and develop professional soft skills required for a successful career in Information Technology.</p>
                     </div>
+
                     <div id="chapter2" class="content-section chapter-content">
                         <h2 style="color: var(--accent-color);">Chapter 2: Company Profile</h2>
                         <p><strong>2.1 Agency Background</strong></p>
@@ -75,6 +83,7 @@
                         <p><strong>2.2 Organizational Structure</strong></p>
                         <p>Details mapping out the supervisors, IT managers, and the intern's direct chain of command during the 486-hour deployment period.</p>
                     </div>
+
                     <div id="chapter3" class="content-section chapter-content">
                         <h2 style="color: var(--accent-color);">Chapter 3: Training Experience</h2>
                         <p><strong>3.1 Daily Tasks and Responsibilities</strong></p>
@@ -82,12 +91,14 @@
                         <p><strong>3.2 Technical Learnings</strong></p>
                         <p>Detailed explanations of the new programming languages, frameworks (such as Vue.js), or tools (such as HeidiSQL and PostgreSQL) mastered during the internship.</p>
                     </div>
+
                     <div id="chapter4" class="content-section chapter-content">
                         <h2 style="color: var(--accent-color);">Chapter 4: Conclusion</h2>
                         <p><strong>4.1 Summary of the Experience</strong></p>
                         <p>A concluding reflection summarizing how the 486 hours contributed to the author's readiness to enter the professional software development industry.</p>
                         <p>The transition from a classroom setting to an actual production environment emphasized the importance of adaptable coding practices and effective team communication.</p>
                     </div>
+
                     <div id="chapter5" class="content-section chapter-content">
                         <h2 style="color: var(--accent-color);">Chapter 5: Recommendations</h2>
                         <p><strong>5.1 For Future Interns</strong></p>
@@ -95,6 +106,21 @@
                         <p><strong>5.2 For the Institution</strong></p>
                         <p>Constructive feedback for the OJT program coordinators at Occidental Mindoro State College to further improve the alignment of academic subjects with current industry standards.</p>
                     </div>
+
+                    <div class="chapter-nav-buttons">
+                        <button id="prevChapter" class="btn-nav hidden">Prev</button>
+                        
+                        <div class="chapter-pagination">
+                            <button class="page-num active" data-target="chapter1">1</button>
+                            <button class="page-num" data-target="chapter2">2</button>
+                            <button class="page-num" data-target="chapter3">3</button>
+                            <button class="page-num" data-target="chapter4">4</button>
+                            <button class="page-num" data-target="chapter5">5</button>
+                        </div>
+
+                        <button id="nextChapter" class="btn-nav">Next</button>
+                    </div>
+
                 </div>
             </div>
         </section>
