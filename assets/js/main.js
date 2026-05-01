@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 2. Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 3. Lightbox Logic for Gallery
     const galleryImages = document.querySelectorAll('.gallery-img');
     if (galleryImages.length > 0) {
         const lightbox = document.createElement('div');
@@ -64,12 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 
-    };
-
+    // 4. Scroll Reveal Animation Logic
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -80,12 +79,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll('.content-section, .resume-section, .page-header, .company-header, .gallery-img, .resume-item, .info-row');
-    
     animatedElements.forEach((el, index) => {
         el.classList.add('fade-in-up');
-        
         el.style.transitionDelay = `${index % 4 * 0.1}s`; 
-        
         observer.observe(el);
     });
+
+    // 5. NEW: Chapter Selection Logic
+    const chapterSelect = document.getElementById('chapterSelect');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const chapters = document.querySelectorAll('.chapter-content');
+
+    const switchChapter = (chapterId) => {
+        // Hide all chapters
+        chapters.forEach(chap => chap.classList.remove('active'));
+        // Show target chapter
+        const target = document.getElementById(chapterId);
+        if(target) target.classList.add('active');
+
+        // Update Dropdown
+        if(chapterSelect) chapterSelect.value = chapterId;
+
+        // Update ToC Highlights
+        tocLinks.forEach(link => {
+            link.classList.remove('active-toc');
+            if(link.getAttribute('data-target') === chapterId) {
+                link.classList.add('active-toc');
+            }
+        });
+    };
+
+    // Listen for Dropdown Change
+    if (chapterSelect) {
+        chapterSelect.addEventListener('change', (e) => {
+            switchChapter(e.target.value);
+        });
+    }
+
+    // Listen for Table of Contents Clicks
+    if (tocLinks.length > 0) {
+        tocLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('data-target');
+                switchChapter(targetId);
+            });
+        });
+    }
 });

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Report | Yujin Alexa D. Prado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">Buliklek</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ojt-profile.html">OJT Profile</a></li>
+            <li><a href="chapters.html" class="active">Chapters</a></li>
+            <li><a href="outputs.html">Outputs</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container">
+            <div class="page-header">
+                <h1>Narrative Report</h1>
+                <p>Use the Table of Contents or the Dropdown below to seamlessly browse through the chapters of my On-the-Job Training experience.</p>
+            </div>
+
+            <div class="chapter-selector-wrapper">
+                <select id="chapterSelect" class="chapter-dropdown">
+                    <option value="chapter1">Chapter 1: Introduction</option>
+                    <option value="chapter2">Chapter 2: Company Profile</option>
+                    <option value="chapter3">Chapter 3: Training Experience</option>
+                    <option value="chapter4">Chapter 4: Conclusion</option>
+                    <option value="chapter5">Chapter 5: Recommendations</option>
+                </select>
+            </div>
+
+            <div class="resume-grid">
+                <div>
+                    <div class="toc-card">
+                        <h3 style="margin-bottom: 1rem;">Table of Contents</h3>
+                        <ul class="toc-list">
+                            <li class="toc-link active-toc" data-target="chapter1">1. Introduction</li>
+                            <li class="toc-link" data-target="chapter2">2. Company Profile</li>
+                            <li class="toc-link" data-target="chapter3">3. Training Experience</li>
+                            <li class="toc-link" data-target="chapter4">4. Conclusion</li>
+                            <li class="toc-link" data-target="chapter5">5. Recommendations & Appendices</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div id="chapter1" class="content-section chapter-content active">
+                        <h2 style="color: var(--accent-color);">Chapter 1: Introduction</h2>
+                        <p><strong>1.1 Background of the Study</strong></p>
+                        <p>This section outlines the context and importance of the On-the-Job Training program as a critical component of the BSIT curriculum at Occidental Mindoro State College. The OJT provides a bridge between academic theories and practical, real-world industry demands.</p>
+                        <p><strong>1.2 Objectives of the OJT</strong></p>
+                        <p>To apply software development theories, enhance problem-solving skills in a corporate environment, and develop professional soft skills required for a successful career in Information Technology.</p>
+                    </div>
+                    <div id="chapter2" class="content-section chapter-content">
+                        <h2 style="color: var(--accent-color);">Chapter 2: Company Profile</h2>
+                        <p><strong>2.1 Agency Background</strong></p>
+                        <p>Information regarding the history, mission, and vision of the deployment agency goes here. Replace this text with the specific details of the IT department or company where the internship was completed.</p>
+                        <p><strong>2.2 Organizational Structure</strong></p>
+                        <p>Details mapping out the supervisors, IT managers, and the intern's direct chain of command during the 486-hour deployment period.</p>
+                    </div>
+                    <div id="chapter3" class="content-section chapter-content">
+                        <h2 style="color: var(--accent-color);">Chapter 3: Training Experience</h2>
+                        <p><strong>3.1 Daily Tasks and Responsibilities</strong></p>
+                        <p>A comprehensive narrative of the daily workflow, including front-end design, backend database management, and technical troubleshooting tasks.</p>
+                        <p><strong>3.2 Technical Learnings</strong></p>
+                        <p>Detailed explanations of the new programming languages, frameworks (such as Vue.js), or tools (such as HeidiSQL and PostgreSQL) mastered during the internship.</p>
+                    </div>
+                    <div id="chapter4" class="content-section chapter-content">
+                        <h2 style="color: var(--accent-color);">Chapter 4: Conclusion</h2>
+                        <p><strong>4.1 Summary of the Experience</strong></p>
+                        <p>A concluding reflection summarizing how the 486 hours contributed to the author's readiness to enter the professional software development industry.</p>
+                        <p>The transition from a classroom setting to an actual production environment emphasized the importance of adaptable coding practices and effective team communication.</p>
+                    </div>
+                    <div id="chapter5" class="content-section chapter-content">
+                        <h2 style="color: var(--accent-color);">Chapter 5: Recommendations</h2>
+                        <p><strong>5.1 For Future Interns</strong></p>
+                        <p>Advice for upcoming BSIT students, such as familiarizing themselves with Git version control and modern database architectures prior to deployment.</p>
+                        <p><strong>5.2 For the Institution</strong></p>
+                        <p>Constructive feedback for the OJT program coordinators at Occidental Mindoro State College to further improve the alignment of academic subjects with current industry standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yujin Alexa D. Prado | BSIT | OJT Requirements.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

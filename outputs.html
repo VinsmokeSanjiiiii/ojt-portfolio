@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- REPLACE TEXT BELOW -->
     <title>Work Outputs | Yujin Alexa D. Prado</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -15,16 +13,21 @@
 
     <nav class="navbar">
         <a href="index.html" class="nav-brand">Buliklek</a>
-        <button class="hamburger">☰</button>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="ojt-profile.html">OJT Profile</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
             <li><a href="outputs.html" class="active">Outputs</a></li>
             <li><a href="reports.html">Reports</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="resume.html">Resume</a></li>
-            <li><button id="theme-toggle" class="theme-toggle">🌙</button></li>
         </ul>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <button class="hamburger">☰</button>
+        </div>
     </nav>
 
     <main>
@@ -33,21 +36,13 @@
                 <h1>Work Outputs & Portfolio</h1>
                 <p>A collection of projects, tasks, and system features I contributed to during my On-the-Job Training.</p>
             </div>
-
-            <!-- Outputs Grid -->
             <div class="content-grid">
-                
-                <!-- Output Item 1 -->
                 <div class="content-section" style="padding: 0; overflow: hidden;">
-                    <!-- Remember to change this to a local image path -->
                     <img src="https://via.placeholder.com/600x350/E8E5E1/2C303A?text=Asset+Management+Dashboard" alt="Asset Management System Screenshot" style="width: 100%; border-radius: var(--radius-md) var(--radius-md) 0 0; border-bottom: 1px solid var(--border-color);">
                     <div style="padding: 2rem;">
                         <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Title: Asset Management System Dashboard</h3>
-                        
                         <p style="margin-bottom: 0.5rem;"><strong>Description:</strong> A comprehensive web dashboard designed to track institutional resources and manage physical assets efficiently across multiple departments.</p>
-                        
                         <p style="margin-bottom: 1rem;"><strong>Role / Contribution:</strong> As a Junior Programmer, I co-engineered the dashboard interface and optimized the backend database queries to ensure it loaded quickly for over 600 active users.</p>
-                        
                         <h4 style="margin-top: 1.5rem; font-size: 1rem;">Tools / Technologies Used:</h4>
                         <ul class="skills-list">
                             <li>PostgreSQL</li>
@@ -56,18 +51,12 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Output Item 2 -->
                 <div class="content-section" style="padding: 0; overflow: hidden;">
-                    <!-- Remember to change this to a local image path -->
                     <img src="https://via.placeholder.com/600x350/E8E5E1/2C303A?text=Report+Generation+Module" alt="Report Generation Module Screenshot" style="width: 100%; border-radius: var(--radius-md) var(--radius-md) 0 0; border-bottom: 1px solid var(--border-color);">
                     <div style="padding: 2rem;">
                         <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">Title: Automated Report Generator</h3>
-                        
                         <p style="margin-bottom: 0.5rem;"><strong>Description:</strong> An internal tool created to automatically generate, format, and export weekly status reports for the administrative staff.</p>
-                        
                         <p style="margin-bottom: 1rem;"><strong>Role / Contribution:</strong> I served as the primary Backend Developer. I translated operational bottlenecks into a functional feature by scripting the automation process, reducing manual workload by several hours each week.</p>
-                        
                         <h4 style="margin-top: 1.5rem; font-size: 1rem;">Tools / Technologies Used:</h4>
                         <ul class="skills-list">
                             <li>Java</li>
@@ -75,7 +64,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>

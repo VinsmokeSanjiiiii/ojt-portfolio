@@ -13,20 +13,25 @@
 
     <nav class="navbar">
         <a href="index.html" class="nav-brand">Buliklek</a>
-        <button class="hamburger">☰</button>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="ojt-profile.html">OJT Profile</a></li>
+            <li><a href="chapters.html">Chapters</a></li>
             <li><a href="outputs.html">Outputs</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="resume.html" class="active">Resume</a></li>
-            <li><button id="theme-toggle" class="theme-toggle">🌙</button></li>
         </ul>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+            <button class="hamburger">☰</button>
+        </div>
     </nav>
 
     <main>
         <section class="container">
-            
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
                 <div style="max-width: 600px;">
                     <h1 style="margin-bottom: 0.5rem;">Curriculum Vitae</h1>
@@ -34,15 +39,13 @@
                         Detail-oriented IT student and future Full-Stack Developer with experience in building scalable web and mobile applications.
                     </p>
                 </div>
-                
                 <div>
-                    <a href="assets/docs/CrisjanAlleh_Resume.pdf" target="_blank" class="btn">Download PDF
-                    </a>
+                    <a href="assets/docs/CrisjanAlleh_Resume.pdf" target="_blank" class="btn">Download PDF</a>
                 </div>
             </div>
 
             <div class="resume-header">
-                <div style="width: 200%; max-width: 900px; height: 800px; margin: 0 auto 4rem auto; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-soft); border: 1px solid var(--border-color);">
+                <div class="pdf-container">
                     <iframe src="assets/docs/CrisjanAlleh_Resume.pdf" width="100%" height="100%" style="border: none;">
                         <p>It appears your web browser doesn't support iframes. You can <a href="assets/docs/CrisjanAlleh_Resume.pdf">click here to download the PDF</a> instead.</p>
                     </iframe>
@@ -58,7 +61,6 @@
                         <p><strong>LinkedIn:</strong> <a href="#" target="_blank" style="text-decoration: underline;">linkedin.com/in/yujinalexa</a></p>
                         <p><strong>Location:</strong> San Isidro, Canwaling, San Jose</p>
                     </div>
-
                     <div class="resume-section">
                         <h3>Education</h3>
                         <div class="resume-item">
@@ -67,7 +69,6 @@
                             <p>Occidental Mindoro State College</p>
                         </div>
                     </div>
-
                     <div class="resume-section">
                         <h3>Core Skills</h3>
                         <ul class="skills-list">
@@ -82,11 +83,9 @@
                         </ul>
                     </div>
                 </div>
-
                 <div>
                     <div class="resume-section">
                         <h3>Work Experience</h3>
-                        
                         <div class="resume-item">
                             <h4>Programmer</h4>
                             <span class="date">2025 - 2026 | Management Information Systems Office</span>
@@ -96,7 +95,6 @@
                                 <li>Provided Tier-2 technical support, maintaining near 100% operational uptime.</li>
                             </ul>
                         </div>
-
                         <div class="resume-item">
                             <h4>Software Developer</h4>
                             <span class="date">2024 - 2025 | Primer Communications</span>
@@ -105,7 +103,6 @@
                                 <li>Automated administrative workflows, reducing manual processing errors by 60%.</li>
                             </ul>
                         </div>
-
                         <div class="resume-item">
                             <h4>Full Stack Software Developer</h4>
                             <span class="date">2024 - 2026 | Freelance</span>
@@ -115,7 +112,6 @@
                                 <li>Managed the complete software development lifecycle.</li>
                             </ul>
                         </div>
-                        
                     </div>
                 </div>
             </div>
