@@ -4,24 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accomplishment Reports | Yujin Alexa D. Prado</title>
+    <link rel="icon" type="image/png" href="assets/img/web_icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Report Entry Layout */
+        .report-entry {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .report-entry {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Uniform Image Grid */
+        .report-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .report-images img {
+            width: 100%;
+            aspect-ratio: 4 / 3; /* Forces all images to have the exact same size ratio */
+            object-fit: cover; /* Prevents stretching */
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .report-images img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Expandable Modal (Lightbox) Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-color);
+        }
+    </style>
 </head>
 <body>
-
     <nav class="navbar">
         <a href="index.html" class="nav-brand">E-Portfolio</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="ojt-profile.html">OJT Profile</a></li>
-            <li><a href="chapters.html">Chapters</a></li>
-            <li><a href="outputs.html">Outputs</a></li>
             <li><a href="reports.html" class="active">Reports</a></li>
             <li><a href="insights.html">Insights</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="resume.html">Resume</a></li>
         </ul>
         <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -31,38 +106,129 @@
     </nav>
 
     <main>
-        <section class="container" style="max-width: 900px;">
+        <section class="container" style="max-width: 1100px;">
             <div class="page-header">
                 <h1>Accomplishment Reports</h1>
-                <p>A chronological log of my daily and weekly activities, progress, and milestones achieved during my internship.</p>
+                <p>A chronological log of tasks and proof of work during the MIS Office deployment.</p>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
-                <div class="content-section" style="position: relative; border-left: 4px solid var(--accent-color);">
-                    <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">January 12 - January 16, 2026</span>
-                    <h2 style="margin-top: 0.5rem;">Week 2: Database Optimization</h2>
-                    <p><strong>Tasks Completed:</strong></p>
-                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                        <li>Reviewed existing database schemas using HeidiSQL.</li>
-                        <li>Identified slow-loading queries within the Asset Management System.</li>
-                        <li>Wrote optimized PostgreSQL queries to improve data retrieval speeds.</li>
-                    </ul>
-                    <p><strong>Proof of Work / Remarks:</strong></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Successfully decreased report generation time by 30%. Screenshots of the query execution plans are attached below.</p>
-                    <img src="https://via.placeholder.com/800x200/E8E5E1/2C303A?text=Database+Query+Screenshot" alt="Proof of Work - Week 2" style="width: 100%; border: 1px solid var(--border-color);">
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">During my first week on-the-job training at Management Information System Office, I was responsible for organizing and cleaning the office so we can work properly.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc1.png" alt="Organizing and cleaning" class="expandable-img">
+                        <img src="assets/img/doc2.png" alt="Organizing and cleaning" class="expandable-img">
+                    </div>
                 </div>
-                <div class="content-section" style="position: relative; border-left: 4px solid var(--accent-color);">
-                    <span style="color: var(--accent-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem;">January 5 - January 9, 2026</span>
-                    <h2 style="margin-top: 0.5rem;">Week 1: Orientation & Onboarding</h2>
-                    <p><strong>Tasks Completed:</strong></p>
-                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-muted);">
-                        <li>Attended the company IT orientation and security briefing.</li>
-                        <li>Set up local development environments (Android Studio, Git, IDEs).</li>
-                        <li>Shadowed the IT Systems Administrator to understand Tier-2 support protocols.</li>
-                    </ul>
-                    <p><strong>Proof of Work / Remarks:</strong></p>
-                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Successfully configured all required software. Ready to begin coding tasks.</p>
-                    <img src="https://via.placeholder.com/800x200/E8E5E1/2C303A?text=Development+Environment+Setup" alt="Proof of Work - Week 1" style="width: 100%; border: 1px solid var(--border-color);">
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">We scan the files and convert in as soft copy. The next day I print our MIS Coordinator revised syllabus.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc3.png" alt="Scanning files" class="expandable-img">
+                        <img src="assets/img/doc4.png" alt="Printing syllabus" class="expandable-img">
+                    </div>
                 </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">We are assigned to organize the bulletin board. I also assist my fellow OJT trainees in removing and organizing cable wires.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc5.png" alt="Bulletin board" class="expandable-img">
+                        <img src="assets/img/doc6.png" alt="Cable wires" class="expandable-img">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">I assist my co-trainees in organizing wires, connecting it to the internet. I was assigned to encode e-sports player’s budget, and walk it to SSIT.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc7.png" alt="Organizing wires" class="expandable-img">
+                        <img src="assets/img/doc8.png" alt="Encoding budget" class="expandable-img">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">I was assigned to fix the header and footer of the document, because it doesn’t display in the print preview. The other day we provided effective assistance that helped complete the task smoothly.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc9.png" alt="Fixing document" class="expandable-img">
+                        <img src="assets/img/doc10.png" alt="Providing assistance" class="expandable-img">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Assisted in organizing and arranging wires, tables, and the router for the upcoming intramurals of high school’s students.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc11.png" alt="Arranging wires and tables" class="expandable-img">
+                        <img src="assets/img/doc12.png" alt="Router setup" class="expandable-img">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Last day of assisting with the e-sports players’ game, and the following days, we continue the removal of cables.</p>
+                    </div>
+                    <div class="report-images">
+                        <img src="assets/img/doc13.png" alt="Assisting e-sports" class="expandable-img">
+                        <img src="assets/img/doc14.png" alt="Removal of cables" class="expandable-img">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">I’m processing the syllabus with our MIS Coordinator for review and approval.</p>
+                    </div>
+                    <div class="report-images" style="grid-template-columns: 1fr;">
+                        <img src="assets/img/doc15.png" alt="Processing syllabus" class="expandable-img" style="max-width: 50%;">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Configuring router, resetting to default, and changing user, password.</p>
+                    </div>
+                    <div class="report-images" style="grid-template-columns: 1fr;">
+                        <img src="assets/img/doc16.png" alt="Configuring router" class="expandable-img" style="max-width: 50%;">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">I’m doing network installation and checking each cable by connecting to internet.</p>
+                    </div>
+                    <div class="report-images" style="grid-template-columns: 1fr;">
+                        <img src="assets/img/doc17.png" alt="Network installation" class="expandable-img" style="max-width: 50%;">
+                    </div>
+                </div>
+
+                <div class="report-entry">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">We are assigned to fix an internet connection issue and we manage to fix it in just a few minutes and the work continues.</p>
+                    </div>
+                    <div class="report-images" style="grid-template-columns: 1fr;">
+                        <img src="assets/img/doc18.png" alt="Fixing internet issue" class="expandable-img" style="max-width: 50%;">
+                    </div>
+                </div>
+
+                <div class="report-entry" style="margin-bottom: 1rem;">
+                    <div>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">I’m organizing my portfolio and other paper works in the office and checking if there is anything to do.</p>
+                    </div>
+                    <div class="report-images" style="grid-template-columns: 1fr;">
+                        <img src="assets/img/doc19.png" alt="Organizing portfolio" class="expandable-img" style="max-width: 50%;">
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
@@ -71,6 +237,46 @@
         <p>&copy; 2026 Yujin Alexa D. Prado | BSIT | OJT Requirements.</p>
     </footer>
 
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            const closeBtn = document.querySelector(".modal-close");
+            const images = document.querySelectorAll(".expandable-img");
+
+            // Open modal on image click
+            images.forEach(img => {
+                img.addEventListener("click", function() {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+
+            // Close modal on 'X' click
+            closeBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener("click", function(e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape" && modal.style.display === "flex") {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
